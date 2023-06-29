@@ -1,6 +1,6 @@
 package utils
 
-type SPADirection int
+type SPADirection uint32
 
 const (
 	SPADirectionInput SPADirection = iota

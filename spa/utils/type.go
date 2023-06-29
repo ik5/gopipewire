@@ -2,7 +2,7 @@ package utils
 
 import "C"
 
-type SPAType int
+type SPAType uint32
 
 // SPA Types - Data type information enumerations
 const (
@@ -77,32 +77,34 @@ const (
 	SPATypeVendorOther SPAType = 0x7f000000
 )
 
+type SPAStringType string
+
 // SPA Type Information
 const (
-	SPATypeInfoBase          = "Spa:"
-	SPATypeInfoFlags         = SPATypeInfoBase + "Flags"
-	SPATypeInfoFlagsBase     = SPATypeInfoFlags + ":"
-	SPATypeInfoEnum          = SPATypeInfoBase + "Enum"
-	SPATypeInfoEnumBase      = SPATypeInfoEnum + ":"
-	SPATypeInfoPod           = SPATypeInfoBase + "Pod"
-	SPATypeInfoPodBase       = SPATypeInfoPod + ":"
-	SPATypeInfoStruct        = SPATypeInfoBase + "Struct"
-	SPATypeInfoStructBase    = SPATypeInfoStruct + ":"
-	SPATypeInfoObject        = SPATypeInfoBase + "Object"
-	SPATypeInfoObjectBase    = SPATypeInfoObject + ":"
-	SPATypeInfoPointer       = SPATypeInfoBase + "Pointer"
-	SPATypeInfoPointerBase   = SPATypeInfoPointer + ":"
-	SPATypeInfoInterface     = SPATypeInfoBase + "Interface"
-	SPATypeInfoInterfaceBase = SPATypeInfoInterface + ":"
-	SPATypeInfoEvent         = SPATypeInfoBase + "Event"
-	SPATypeInfoEventBase     = SPATypeInfoEvent + ":"
-	SPATypeInfoCommand       = SPATypeInfoBase + "Command"
-	SPATypeInfoCommandBase   = SPATypeInfoCommand + ":"
+	SPATypeInfoBase          SPAStringType = "Spa:"
+	SPATypeInfoFlags                       = SPATypeInfoBase + "Flags"
+	SPATypeInfoFlagsBase                   = SPATypeInfoFlags + ":"
+	SPATypeInfoEnum                        = SPATypeInfoBase + "Enum"
+	SPATypeInfoEnumBase                    = SPATypeInfoEnum + ":"
+	SPATypeInfoPod                         = SPATypeInfoBase + "Pod"
+	SPATypeInfoPodBase                     = SPATypeInfoPod + ":"
+	SPATypeInfoStruct                      = SPATypeInfoBase + "Struct"
+	SPATypeInfoStructBase                  = SPATypeInfoStruct + ":"
+	SPATypeInfoObject                      = SPATypeInfoBase + "Object"
+	SPATypeInfoObjectBase                  = SPATypeInfoObject + ":"
+	SPATypeInfoPointer                     = SPATypeInfoBase + "Pointer"
+	SPATypeInfoPointerBase                 = SPATypeInfoPointer + ":"
+	SPATypeInfoInterface                   = SPATypeInfoBase + "Interface"
+	SPATypeInfoInterfaceBase               = SPATypeInfoInterface + ":"
+	SPATypeInfoEvent                       = SPATypeInfoBase + "Event"
+	SPATypeInfoEventBase                   = SPATypeInfoEvent + ":"
+	SPATypeInfoCommand                     = SPATypeInfoBase + "Command"
+	SPATypeInfoCommandBase                 = SPATypeInfoCommand + ":"
 )
 
 type SPATypeInfo struct {
 	Type   uint32
 	Parent uint32
-	Name   *C.CString
+	Name   *C.char
 	Values *SPATypeInfo
 }
