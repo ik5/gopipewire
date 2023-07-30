@@ -108,3 +108,13 @@ type SPATypeInfo struct {
 	Name   *C.char
 	Values *SPATypeInfo
 }
+
+type SPARectangle struct {
+	width  int32
+	height int32
+}
+
+type SPAPoint struct {
+	x int32
+	y int32
+}
