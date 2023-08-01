@@ -1,6 +1,8 @@
 package pod
 
 import (
+	"unsafe"
+
 	"gitea.linesip.com/libraries/gopipewire/spa/utils"
 )
 
@@ -114,4 +116,20 @@ type SPAPodObjectBody struct {
 type SPAPodObject struct {
 	Pod  SPAPod
 	Body SPAPodObjectBody
+}
+
+type SPAPodPointerBody struct {
+	Pod     SPAPod
+	padding uint32
+	Body    unsafe.Pointer
+}
+
+type SPAPodPointer struct {
+	Pod  SPAPod
+	Body SPAPodPointerBody
+}
+
+type SPAPodFD struct {
+	Pod   SPAPod
+	Value int64
 }
