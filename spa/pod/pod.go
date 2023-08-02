@@ -3,6 +3,7 @@ package pod
 import (
 	"unsafe"
 
+	"gitea.linesip.com/libraries/gopipewire/spa/control"
 	"gitea.linesip.com/libraries/gopipewire/spa/utils"
 )
 
@@ -153,4 +154,15 @@ type SPAPodProp struct {
 	Key   uint32      // key of property, list of valid keys depends on the object type
 	Flags SPAPodFlags // flags for property
 	Value SPAPod
+}
+
+type SPAPodControl struct {
+	Offset uint32                 // media offset
+	Type   control.SPAControlType //type of control, enum spa_control_type
+	Value  SPAPod                 //control value, depends on type
+}
+
+type SPAPodSequenceBody struct {
+	Unit uint32
+	pad  uint32
 }
