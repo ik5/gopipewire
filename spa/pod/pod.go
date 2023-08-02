@@ -6,6 +6,8 @@ import (
 	"gitea.linesip.com/libraries/gopipewire/spa/utils"
 )
 
+type SPAPodFlags uint32
+
 type SPAPod struct {
 	Size uint32 // size of the body
 	Type uint32 // a basic id of enum spa_type
@@ -95,7 +97,7 @@ type SPAPodChoiceBody struct {
 	// type of choice, one of enum spa_choice_type
 	Type SPAPodChoiceType
 	// extra flags
-	Flags uint32
+	Flags SPAPodFlags
 	Child SPAPod
 }
 
@@ -132,4 +134,23 @@ type SPAPodPointer struct {
 type SPAPodFD struct {
 	Pod   SPAPod
 	Value int64
+}
+
+const (
+	SPAPodPropFlagReadOnly SPAPodFlags = 1 << 0 // is read-only
+	SPAPodPropFlagHardware SPAPodFlags = 1 << 1 // some sort of hardware parameter
+	SPAPodPropFlagHintDict SPAPodFlags = 1 << 2 /* contains a dictionary struct as
+	   (Struct(
+		  Int : n_items,
+		  (String : key,
+		   String : value)*))
+	*/
+	SPAPodPropFlagMandatory SPAPodFlags = 1 << 3 // is mandatory
+	SPAPodPropFlagDontFixme SPAPodFlags = 1 << 4 // choices need no fixation
+)
+
+type SPAPodProp struct {
+	Key   uint32      // key of property, list of valid keys depends on the object type
+	Flags SPAPodFlags // flags for property
+	Value SPAPod
 }
