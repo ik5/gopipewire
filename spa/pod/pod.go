@@ -166,3 +166,8 @@ type SPAPodSequenceBody struct {
 	Unit uint32
 	pad  uint32
 }
+
+type SPAPodSequence struct {
+	Pod  SPAPod
+	Body SPAPodSequenceBody
+}
