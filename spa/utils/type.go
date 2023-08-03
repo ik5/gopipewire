@@ -8,73 +8,73 @@ type SPAType uint32
 const (
 	// Basic types
 
-	SPATypeStart SPAType = iota
-	SPATypeNone
-	SPATypeBool
-	SPATypeID
-	SPATypeInt
-	SPATypeLong
-	SPATypeFloat
-	SPATypeDouble
-	SPATypeString
-	SPATypeBytes
-	SPATypeRectangle
-	SPATypeFraction
-	SPATypeBitmap
-	SPATypeArray
-	SPATypeStruct
-	SPATypeObject
-	SPATypeSequence
-	SPATypePointer
-	SPATypeFd
-	SPATypeChoice
-	SPATypePod
-	SPATypeLast /**< not part of ABI */
+	SPATypeEnumStart SPAType = iota
+	SPATypeEnumNone
+	SPATypeEnumBool
+	SPATypeEnumID
+	SPATypeEnumInt
+	SPATypeEnumLong
+	SPATypeEnumFloat
+	SPATypeEnumDouble
+	SPATypeEnumString
+	SPATypeEnumBytes
+	SPATypeEnumRectangle
+	SPATypeEnumFraction
+	SPATypeEnumBitmap
+	SPATypeEnumArray
+	SPATypeEnumStruct
+	SPATypeEnumObject
+	SPATypeEnumSequence
+	SPATypeEnumPointer
+	SPATypeEnumFd
+	SPATypeEnumChoice
+	SPATypeEnumPod
+	SPATypeEnumLast /**< not part of ABI */
 
 	/* Pointers */
 
-	SPATypePointerStart SPAType = iota + 0x10000
-	SPATypePointerBuffer
-	SPATypePointerMeta
-	SPATypePointerDict
-	SPATypePointerLast /**< not part of ABI */
+	SPATypeEnumPointerStart SPAType = iota + 0x10000
+	SPATypeEnumPointerBuffer
+	SPATypeEnumPointerMeta
+	SPATypeEnumPointerDict
+	SPATypeEnumPointerLast /**< not part of ABI */
 
 	/* Events */
 
-	SPATypeEventStart SPAType = iota + 0x20000
-	SPATypeEventDevice
-	SPATypeEventNode
-	SPATypeEventLast /**< not part of ABI */
+	SPATypeEnumEventStart SPAType = iota + 0x20000
+	SPATypeEnumEventDevice
+	SPATypeEnumEventNode
+	SPATypeEnumEventLast /**< not part of ABI */
 
 	/* Commands */
 
-	SPATypeCommandStart SPAType = iota + 0x30000
-	SPATypeCommandDevice
-	SPATypeCommandNode
-	SPATypeCommandLast /**< not part of ABI */
+	SPATypeEnumCommandStart SPAType = iota + 0x30000
+	SPATypeEnumCommandDevice
+	SPATypeEnumCommandNode
+	SPATypeEnumCommandLast /**< not part of ABI */
 
 	/* Objects */
 
-	SPATypeObjectStart SPAType = iota + 0x40000
-	SPATypeObjectPropInfo
-	SPATypeObjectProps
-	SPATypeObjectFormat
-	SPATypeObjectParamBuffers
-	SPATypeObjectParamMeta
-	SPATypeObjectParamIO
-	SPATypeObjectParamProfile
-	SPATypeObjectParamPortConfig
-	SPATypeObjectParamRoute
-	SPATypeObjectProfiler
-	SPATypeObjectParamLatency
-	SPATypeObjectParamProcessLatency
-	SPATypeObjectLast /**< not part of ABI */
+	SPATypeEnumObjectStart SPAType = iota + 0x40000
+	SPATypeEnumObjectPropInfo
+	SPATypeEnumObjectProps
+	SPATypeEnumObjectFormat
+	SPATypeEnumObjectParamBuffers
+	SPATypeEnumObjectParamMeta
+	SPATypeEnumObjectParamIO
+	SPATypeEnumObjectParamProfile
+	SPATypeEnumObjectParamPortConfig
+	SPATypeEnumObjectParamRoute
+	SPATypeEnumObjectProfiler
+	SPATypeEnumObjectParamLatency
+	SPATypeEnumObjectParamProcessLatency
+	SPATypeEnumObjectLast /**< not part of ABI */
 
 	/* vendor extensions */
 
-	SPATypeVendorPipeWire SPAType = 0x02000000
+	SPATypeEnumVendorPipeWire SPAType = 0x02000000
 
-	SPATypeVendorOther SPAType = 0x7f000000
+	SPATypeEnumVendorOther SPAType = 0x7f000000
 )
 
 type SPAStringType string

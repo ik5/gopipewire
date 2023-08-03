@@ -85,3 +85,9 @@ func TimeValToNSec(tvSec, tvUsec int64) int64 {
 func TimeValToUSec(tvSec, tvUsec int64) int64 {
 	return tvSec*USecPerSec + tvUsec
 }
+
+// Nop does exactly nothing
+func Nop() {
+	for {
+	}
+}
